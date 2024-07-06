@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+    .shadow-purple-multi {
+      box-shadow: 
+        5px 5px rgba(128, 0, 128, 0.4),
+        10px 10px rgba(128, 0, 128, 0.3),
+        15px 15px rgba(128, 0, 128, 0.2),
+        20px 20px rgba(128, 0, 128, 0.1),
+        25px 25px rgba(128, 0, 128, 0.05);
+    }
+  }
