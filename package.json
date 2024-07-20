@@ -13,7 +13,7 @@
   "scripts": {
     "start": "vite"
   },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "author": "Sanjoy Paul",
+  "license": "MIT",
+  "description": "This is a portfolio project"
 }
