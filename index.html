@@ -39,6 +39,23 @@
     .element::-webkit-scrollbar {
         width: 0 !important
     }
+
+    .gradient-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(45deg, #00ffcc, #8000ff);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+    }
 </style>
 
 <body class="dark-mode element max-sm:flex max-sm:flex-col w-screen font-fontPop">
@@ -59,10 +76,10 @@
                         <i class="fa-solid fa-house"></i> HOME
                     </li>
                 </a>
-                <a href="#skills">
+                <a href="#Projects">
                     <li
                         class="rounded-full p-2 px-6 text-lg transition duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-gray-700">
-                        <i class="fa-solid fa-terminal"></i> SKILLS
+                        <i class="fa-solid fa-terminal"></i> PROJECTS
                     </li>
                 </a>
                 <a href="#about">
@@ -75,20 +92,23 @@
         </div>
         <!--Navbar Mobile-->
         <section
-        class="fixed z-50 md:w-[30rem] md:m-auto xl:hidden bottom-10 left-0 right-0 flex flex-wrap justify-center w-full">
-        <div
-            class="flex gap-3 flex-wrap items-center w-[65%] justify-between p-2 dark:bg-white/5 backdrop-blur-lg border-2 rounded-full px-5 border-gray-800 border-opacity-45">
-            <a href="#home">
-                <i class="fa-solid fa-house active:bg-gray-300 p-3 rounded-full active:text-black active:transition duration-500 ease-in-out"></i>
-            </a>
-            <a href="#skills">
-                <i class="fa-solid fa-terminal active:bg-gray-300 p-3 rounded-full active:text-black active:transition duration-500 ease-in-out"></i>
-            </a>
-            <a href="#about">
-                <i class="fa-regular fa-address-card active:bg-gray-300 p-3 rounded-full active:text-black active:transition duration-500 ease-in-out"></i>
-            </a>
+            class="fixed z-50 md:w-[30rem] md:m-auto xl:hidden bottom-10 left-0 right-0 flex flex-wrap justify-center w-full">
+            <div
+                class="flex gap-3 flex-wrap items-center w-[65%] justify-between p-2 dark:bg-white/5 backdrop-blur-lg border-2 rounded-full px-5 border-gray-800 border-opacity-45">
+                <a href="#home">
+                    <i
+                        class="fa-solid fa-house active:bg-gray-300 p-3 rounded-full active:text-black active:transition duration-500 ease-in-out"></i>
+                </a>
+                <a href="#skills">
+                    <i
+                        class="fa-solid fa-terminal active:bg-gray-300 p-3 rounded-full active:text-black active:transition duration-500 ease-in-out"></i>
+                </a>
+                <a href="#about">
+                    <i
+                        class="fa-regular fa-address-card active:bg-gray-300 p-3 rounded-full active:text-black active:transition duration-500 ease-in-out"></i>
+                </a>
             </div>
-    </section>
+        </section>
         <button id="toggleButton" onclick="document.body.classList.toggle('dark-mode')">
             <i
                 class="fa-solid fa-moon flex items-center justify-center max-sm:text-xl text-2xl border-2 border-grey-900 rounded-full px-3 py-1 opacity-75 hover:opacity-100"></i>
@@ -106,23 +126,24 @@
             <div class="xl:mt-12 font-bold text-3xl max-sm:text-xl max-sm:mt-5 max-sm:w-screen max-sm:pl-10">
                 <p>I am a <b class="text-purple-500 font-bold">beginner Web Developer And ML Enthusiast.</b></p>
             </div>
-            <div
-                class="text-xl font-medium mt-3 max-sm:text-sm max-sm:w-screen max-sm:pl-10 max-sm:mt-0">
+            <div class="text-xl font-medium mt-3 max-sm:text-sm max-sm:w-screen max-sm:pl-10 max-sm:mt-0">
                 <p>🚀I am a 2nd Year <b class="text-purple-500 font-bold">CSE</b> Undergraduate Interested in <b
                         class="text-purple-500 font-bold">ML</b> And <b class="text-purple-500 font-bold">Web
                         Development</b>.</p>
             </div>
-            <div
-                class="flex mt-10 gap-10 max-sm:mt-3 max-sm:gap-5 max-sm:relative max-sm:w-screen max-sm:pl-10">
+            <div class="flex mt-10 gap-10 max-sm:mt-3 max-sm:gap-5 max-sm:relative max-sm:w-screen max-sm:pl-10">
                 <!--<div
                     class="text-white xl:px-2 text-2xl font-semibold hover:transition duration-300 ease-in-out border-2 rounded border-white hover:shadow-[5px_5px_0px_0px_rgba(168,85,247,1)] max-sm:text-xl max-sm:w-36 max-sm:h-10 max-sm:flex max-sm:justify-center items-center max-sm:items-center">
                     Contact Me</div>-->
-                    <div class="relative inline-block group py-1.5 px-2.5 xl:px-2 text-2xl font-semibold max-sm:text-xl max-sm:w-36 max-sm:h-10 max-sm:flex max-sm:justify-center items-center max-sm:items-center border-[1.5px] border-gray-500 hover:border-white text-gray-200 hover:text-white">
-                        <span class="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-2 translate-y-2 bg-gray-400 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                        <span class="absolute inset-0 w-full h-full bg-black"></span>
-                        <span class="relative">Contact Me</span>
-                    </div>
-                <div class="text-3xl flex gap-6 xl:mr-96 max-sm:text-[27px] max-sm:gap-3 max-sm:items-center items-center">
+                <div
+                    class="relative inline-block group py-1.5 px-2.5 xl:px-2 text-2xl font-semibold max-sm:text-xl max-sm:w-36 max-sm:h-10 max-sm:flex max-sm:justify-center items-center max-sm:items-center border-[1.5px] border-gray-500 hover:border-white text-gray-200 hover:text-white">
+                    <span
+                        class="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-2 translate-y-2 bg-gray-400 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span class="absolute inset-0 w-full h-full bg-black"></span>
+                    <span class="relative">Contact Me</span>
+                </div>
+                <div
+                    class="text-3xl flex gap-6 xl:mr-96 max-sm:text-[27px] max-sm:gap-3 max-sm:items-center items-center">
                     <a href="https://github.com/SANJOY-PAUL-0981" target="_blank"><i
                             class="fa-brands fa-github duration-200 hover:-translate-y-2 cursor-pointer"></i></a>
                     <a href="https://x.com/SanjoyPaul0981" target="_blank"><i
@@ -148,7 +169,7 @@
             <div class="w-48 h-[2px] bg-purple-900 max-sm:w-40"></div>
             <div
                 class="w-fit p-2 px-5 text-3xl rounded-md font-fontPop font-medium glow border-2 border-purple-900 max-sm:text-[2.063rem] max-sm:flex max-sm:gap-1 max-sm:items-center">
-                <i class="fa-solid fa-terminal"></i> Skills
+                <i class="fa-solid fa-laptop-code text-4xl max-sm:lg"></i> Skills
             </div>
             <div class="w-48 h-[0.125rem] bg-purple-900 max-sm:w-40"></div>
         </div>
@@ -275,7 +296,8 @@
                     </div>
                     <div>
                         <p><b class="font-normal text-sky-400">this.</b><b class="font-normal"> skill.length</b><b
-                                class="font-normal text-purple-500"> >=</b><b class="text-[#15F5BA] font-normal"> 5</b></p>
+                                class="font-normal text-purple-500"> >=</b><b class="text-[#15F5BA] font-normal"> 5</b>
+                        </p>
                     </div>
                 </div>
                 <p class="ml-20 text-gray-400">);</p>
@@ -283,6 +305,56 @@
                 <p class="text-gray-400">};</p>
             </div>
         </div>
+    </div>
+
+    <!--Projects-->
+    <div id="Projects" class="flex items-center justify-center mt-36 max-sm:mt-20">
+        <div class="w-48 h-[2px] bg-purple-900 max-sm:w-40"></div>
+        <div
+            class="p-2 px-5 text-3xl rounded-md font-medium glow border-2 border-purple-900 max-sm:text-[27px] max-sm:flex max-sm:gap-1 max-sm:items-center max-sm:w-80 max-sm:justify-center max-sm:px-1">
+            <i class="fa-solid fa-terminal"></i> Projects
+        </div>
+        <div class="w-48 h-[0.125rem] bg-purple-900 max-sm:w-40"></div>
+    </div>
+    <div class="flex justify-center pt-32 gap-36">
+        <div
+            class="group flex flex-col justify-start items-start gap-2 w-96 h-56 duration-500 relative rounded-lg p-4 bg-black hover:-translate-y-2 hover:shadow-xl shadow-gray-300 gradient-border">
+            <div class="absolute duration-700 shadow-md group-hover:-translate-y-4 group-hover:-translate-x-4 -bottom-10 -right-10 w-1/2 h-1/2 rounded-lg bg-gray-200"
+                alt="image here"></div>
+
+            <div class="">
+                <h2 class="text-2xl font-bold mb-2 text-white">Tsukifetch</h2>
+                <p class="text-white line-clamp-3">
+                    Hey guys this is a CLI based System Information tool like neofetch. It is build in C language. I
+                    hope you guys will like it.
+                </p>
+            </div>
+            <button class="relative pt-7 pl-2">
+                <a href="https://github.com/SANJOY-PAUL-0981/Tsukifetch" target="_blank"><i
+                    class="fa-brands fa-github duration-200 hover:-translate-y-2 cursor-pointer text-3xl"></i>
+                </a>
+            </button>
+        </div>
+
+        <div
+            class="group flex flex-col justify-start items-start gap-2 w-96 h-56 duration-500 relative rounded-lg p-4 bg-black hover:-translate-y-2 hover:shadow-xl shadow-gray-300 gradient-border">
+            <div class="absolute duration-700 shadow-md group-hover:-translate-y-4 group-hover:-translate-x-4 -bottom-10 -right-10 w-1/2 h-1/2 rounded-lg bg-gray-200"
+                alt="image here"></div>
+
+            <div class="">
+                <h2 class="text-2xl font-bold mb-2 text-white">Terminal-Portfolio</h2>
+                <p class="text-white line-clamp-3">
+                    This is a terminal portfolio made with vanilla JavaScript and some npm packages like Terminal-kit
+                    and terminal-box.
+                </p>
+            </div>
+            <button class="relative pt-7 pl-2">
+                <a href="https://github.com/SANJOY-PAUL-0981/Terminal-Portfolio" target="_blank"><i
+                    class="fa-brands fa-github duration-200 hover:-translate-y-2 cursor-pointer text-3xl"></i>
+                </a>
+            </button>
+        </div>
+
     </div>
 
     <!--About Me-->
@@ -300,8 +372,8 @@
                 <p class="text-purple-500 text-3xl font-bold max-sm:text-2xl max-sm:font-semibold">Hello Everyone!</p>
                 <p> I am Sanjoy Paul. I am currently pursuing my bachelor's degree in <b
                         class="text-blue-500 font-bold">Computer Science and Engineering.</b> I
-                    am in my 2nd year of college. I am a self-taught beginner <b
-                        class="text-green-500 font-bold">Web Developer</b> from Kolkata,
+                    am in my 2nd year of college. I am a self-taught beginner <b class="text-green-500 font-bold">Web
+                        Developer</b> from Kolkata,
                     West Bengal, India. I am also an <b class="text-orange-400 font-bold">ML enthusiast.</b> I love to
                     learn and talk about tech.
                 </p>
